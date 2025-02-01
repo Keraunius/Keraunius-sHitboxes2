@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>By Keraunius;</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://tr.rbxcdn.com/180DAY-7ef9052237754767345f63f4152195b0/500/280/Image/Jpeg/noFilter');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #ff5722;
+            text-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722; }
+            100% { text-shadow: 0 0 20px #ff5722, 0 0 40px #ff5722; }
+        }
+
+        .comparison {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        section {
+            flex: 1;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+        }
+
+        .hitbox-publica {
+            background-image: url('https://media.discordapp.net/attachments/1329570877666492467/1334970116991090708/holographic-unicorn-gradient-colors-soft-blurred-background_265515-18235.png?ex=679e774e&is=679d25ce&hm=5dbb8aa823bee268aa8995252462e297e630dcf4357534b6e0c0de30d46861e1&=&format=webp&quality=lossless&width=782&height=447');
+        }
+
+        .hitbox-privada {
+            background-image: url('https://media.discordapp.net/attachments/1329570877666492467/1335043310997213194/4k-blue-vertical-black-wallpaper-preview.png?ex=679ebb79&is=679d69f9&hm=409a4781f0fa40e0b97fc5d1420d2c29a6e5f6dcd687c53e5089cd9edbbcbeac&=&format=webp&quality=lossless&width=910&height=608');
+        }
+
+        .hitbox-publica h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffeb3b;
+            text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b;
+            animation: glow-yellow 2s infinite alternate;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes glow-yellow {
+            0% { text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b; }
+            100% { text-shadow: 0 0 20px #ffeb3b, 0 0 40px #ffeb3b; }
+        }
+
+        .hitbox-privada h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2196f3;
+            text-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3;
+            animation: glow-blue 2s infinite alternate;
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes glow-blue {
+            0% { text-shadow: 0 0 10px #2196f3, 0 0 20px #2196f3; }
+            100% { text-shadow: 0 0 20px #2196f3, 0 0 40px #2196f3; }
+        }
+
+        section img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hitbox-publica img:hover {
+            box-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 40px #ffeb3b, 0 0 80px #ffeb3b;
+        }
+
+        .hitbox-privada img:hover {
+            box-shadow: 0 0 10px #03a9f4, 0 0 20px #03a9f4, 0 0 40px #03a9f4, 0 0 80px #03a9f4;
+        }
+
+        section ul {
+            list-style-type: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        section ul li {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            line-height: 1.5;
+        }
+
+        section ul li.correct::before {
+            content: "✔";
+            color: #4caf50;
+            position: absolute;
+            left: 0;
+        }
+
+        section ul li.incorrect::before {
+            content: "❌";
+            color: #f44336;
+            position: absolute;
+            left: 0;
+        }
+
+        section ul li.correct:hover {
+            color: #4caf50;
+            text-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50;
+        }
+
+        section ul li.incorrect:hover {
+            color: #f44336;
+            text-shadow: 0 0 10px #f44336, 0 0 20px #f44336;
+        }
+
+        .credits {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            position: relative;
+            z-index: 2;
+        }
+
+        .credits h3 {
+            font-size: 1.5rem;
+            color: #ff5722;
+            text-shadow: 0 0 10px #ff5722;
+            margin-bottom: 10px;
+        }
+
+        .credits p {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .credits p strong {
+            color: #4caf50;
+        }
+
+        .discord-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #5865F2;
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border: 2px solid transparent;
+            box-shadow: 0 0 10px rgba(88, 101, 242, 0.5);
+        }
+
+        .discord-button img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+
+        .discord-button:hover {
+            background-color: #4a56d6;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(88, 101, 242, 0.8), 0 0 40px rgba(88, 101, 242, 0.6);
+            border-color: #ffffff;
+        }
+
+        .credits-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Estilos específicos para móvil */
+        @media (max-width: 768px) {
+            .comparison {
+                flex-direction: column;
+            }
+
+            section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hitbox-publica h2, .hitbox-privada h2 {
+                font-size: 1.5rem;
+            }
+
+            section ul li {
+                font-size: 1rem;
+            }
+
+            .discord-button {
+                width: 100%;
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="neon-text">Kerauniu's Hitboxes</h1>
+        </header>
+
+        <div class="comparison">
+            <section class="hitbox-publica">
+                <h2>Free Version</h2>
+                <img src="https://media.discordapp.net/attachments/1329570877666492467/1334940686876672061/image.png?ex=679e5be5&is=679d0a65&hm=14151ebb2b21e282882ad60510704f8b620c6e6b81e9fd73de8e0d16e9b94fda&=&format=webp&quality=lossless&width=225&height=670" alt="Hitbox Pública">
+                <ul>
+                    <li class="correct">HITBOX</li>
+                    <li class="correct">Fake Lag</li>
+                    <li class="correct">Anti hole</li>
+                    <li class="incorrect">Notifier Opción</li>
+                    <li class="correct">Open Source</li>
+                    <li class="incorrect">No optimizado</li>
+                    <li class="correct">Soporte Rapido</li>
+                    <li class="correct">Gratis</li>
+                    <li class="incorrect">No personalizable</li>
+                    <li class="incorrect">Actualizaciones no constantes</li>
+                </ul>
+            </section>
+
+            <section class="hitbox-privada">
+                <h2>Private Version</h2>
+                <img src="https://media.discordapp.net/attachments/1329570877666492467/1334941116319010836/image.png?ex=679e5c4c&is=679d0acc&hm=d7fee1940d1c93a93063aad317df3cbbbfa87dd73344dd2498e78f49694bac1c&=&format=webp&quality=lossless&width=225&height=670" alt="Hitbox Privada">
+                <ul>
+                    <li class="correct">Hitbox/Reach</li>
+                    <li class="correct">Fake lag</li>
+                    <li class="correct">Anti hole</li>
+                    <li class="correct">Notifier Opcion</li>
+                    <li class="correct">Optimizacion</li>
+                    <li class="correct">Personalizacion de teclas</li>
+                    <li class="correct">Soporte directo con el owner</li>
+                    <li class="correct">Actualizaciones rapidas y constantes</li>
+                    <li class="incorrect">Ofuscado con KerasFuscator</li>
+                    <li class="correct">Version exclusiva para torneos</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="credits-container">
+            <div class="credits">
+                <h3 class="neon-text">Creditos</h3>
+                <p><strong>Testers:</strong> Cayo, Always, John Ferreira</p>
+                <p><strong>Owner:</strong> Keraunius </p>
+            </div>
+            <a href="https://discord.gg/SwrmkTNRAj" target="_blank" class="discord-button">
+                <img src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord Logo">
+                Contacta con Keraunius
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        }
+        if (isMobileDevice()) {
+            document.body.classList.add('mobile');
+        } else {
+            document.body.classList.add('desktop');
+        }
+    </script>
+</body>
+</html>
